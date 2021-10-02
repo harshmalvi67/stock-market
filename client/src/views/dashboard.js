@@ -14,7 +14,7 @@ export default function Dashboard() {
     useEffect(() => {
         
         const fetchdata = async () => {
-            const data = await axios.get('http://localhost:3000/');
+            const data = await axios.get('http://localhost:5000/');
             console.log(data);
             setStocklist(data.data);
         }

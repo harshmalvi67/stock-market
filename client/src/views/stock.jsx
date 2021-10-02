@@ -13,7 +13,7 @@ export default function Stock() {
     useEffect(() => {
 
         const fetchdata = async () => {
-            const data = await axios.get(`http://localhost:3000/stock/${key}`);
+            const data = await axios.get(`http://localhost:5000/stock/${key}`);
             setstock(data.data);
             console.log(data.data);
         }
