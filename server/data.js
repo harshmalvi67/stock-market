@@ -1,7 +1,22 @@
 const express = require("express");
-
+const cors = require('cors');
 const app = express();
 const fs = require("fs");
+const {MongoClient} = require('mongodb');
+
+app.use(cors());
+
+const uri = "mongodb+srv://harsh:123456@cluster0.nike2.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
+
+
+const client = fetch();
+async function fetch(){ 
+    return await MongoClient.connect(uri, (err, db) => {
+    if(err) throw err;
+    console.log('Database is connected');
+    return db;
+})}
+
 // const { default: Stock } = require("../client/src/views/stock");
 var stocklist;
 fs.readFile("./Stock List.json", "utf-8", (err, res) => {
@@ -26,7 +41,6 @@ app.get('/', (req, res) => {
 app.get('/stock/:stock', (req, res) => {
     var stock = [];
     let key = req.params.stock.toUpperCase();
-    console.log(key);
     for(let idx in stocklist){
         if(stocklist[idx].key === key){
             stock.push({
@@ -39,6 +53,6 @@ app.get('/stock/:stock', (req, res) => {
     res.send(stock);
 })
 
-app.listen(5000, () => {
-    console.log("Server is running on port 5000");
+app.listen(27017, () => {
+    console.log("Server is running on port 27017");
 });

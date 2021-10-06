@@ -22,7 +22,7 @@ export default function Dashboard() {
     }, [])    
 
     return (
-            <div className="card" style={{"width" : "100%"}}>
+            <div className="container">
                 <ul className="list-group list-group-flush">
                     {stocklist.map((stock) => {
                         return <Link to={`/stock/${stock}`} className="list-group-item" style={list_style}>{stock}</Link>

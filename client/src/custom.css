@@ -1,0 +1,11 @@
+.par_div{
+    display : flex;
+    justify-content : center; 
+    align-items : center; 
+    height : 100vh; 
+    width : 100vw;
+}
+.child_div{
+    height: 60vh;
+    width: 60vw;
+}

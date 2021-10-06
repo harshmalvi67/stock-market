@@ -4,6 +4,7 @@ import Header from './views/header';
 import Footer from './views/footer';
 import Dashboard from './views/dashboard';
 import Stock from './views/stock';
+import Login from './views/login';
 import {
   BrowserRouter as Router,
   Route,
@@ -19,6 +20,9 @@ function App() {
         </Route>
         <Route path="/signup">
           <Registeration />
+        </Route>
+        <Route path="/login">
+          <Login />
         </Route>
         <Route path="/stock/:stock">
           <Stock />

@@ -21,8 +21,8 @@ export default function Stock() {
     }, [])
 
     return (
-        <div>
-            <div className="row m-2" style={{'textAlign' : 'left'}}>
+        <div className="container">
+            <div className="row m-2">
                 <h1>{key}</h1>
                 </div>
                 <div className = "row">
